@@ -1,0 +1,252 @@
+[
+  {
+    "name": "plain lookup",
+    "role": "employee",
+    "user": null,
+    "question": "How soon must a P1 incident be acknowledged?",
+    "expect_phrases": ["5 minutes"],
+    "expect_doc": "SOP-OPS-001",
+    "expect_section": "5.",
+    "expect_found": true
+  },
+  {
+    "name": "table value",
+    "role": "employee",
+    "user": null,
+    "question": "What is the hotel limit per night in Mumbai?",
+    "expect_phrases": ["5,000"],
+    "expect_doc": "POL-HR-010",
+    "expect_section": "5.2",
+    "expect_found": true
+  },
+  {
+    "name": "spreadsheet row",
+    "role": "employee",
+    "user": null,
+    "question": "Which team owns payments-service?",
+    "expect_phrases": ["Payments Platform"],
+    "expect_doc": "REG-OPS-003",
+    "expect_section": "Services",
+    "expect_found": true
+  },
+  {
+    "name": "steps",
+    "role": "employee",
+    "user": null,
+    "question": "What are the steps to restore a database?",
+    "expect_phrases": ["restore"],
+    "expect_doc": "SOP-OPS-005",
+    "expect_section": "7.3",
+    "expect_found": true
+  },
+  {
+    "name": "agreed handling",
+    "role": "employee",
+    "user": null,
+    "question": "What are the RPO and RTO of the Payments database?",
+    "expect_phrases": ["15 minutes", "1 hour"],
+    "expect_doc": "SOP-OPS-005",
+    "expect_section": "7.1",
+    "expect_found": true
+  },
+  {
+    "name": "web page",
+    "role": "employee",
+    "user": null,
+    "question": "What is TimesFM-3?",
+    "expect_phrases": ["forecast"],
+    "expect_doc": "timesfm",
+    "expect_section": "",
+    "expect_found": true
+  },
+  {
+    "name": "not found",
+    "role": "employee",
+    "user": null,
+    "question": "What is SwiftPay's dress code?",
+    "expect_phrases": [],
+    "expect_doc": "",
+    "expect_section": "",
+    "expect_found": false
+  },
+  {
+    "name": "not found + distractor",
+    "role": "employee",
+    "user": null,
+    "question": "Which AI model does SwiftPay use for forecasting?",
+    "expect_phrases": [],
+    "expect_doc": "",
+    "expect_section": "",
+    "expect_found": false
+  },
+  {
+    "name": "permission: employee",
+    "role": "employee",
+    "user": null,
+    "question": "Who is on call in October?",
+    "expect_phrases": [],
+    "expect_doc": "",
+    "expect_section": "",
+    "expect_found": false
+  },
+  {
+    "name": "permission: sre",
+    "role": "sre_ops",
+    "user": null,
+    "question": "Who is on call in October?",
+    "expect_phrases": ["Arjun Mehta"],
+    "expect_doc": "RPT-OPS-2026-09",
+    "expect_section": "Appendix B",
+    "expect_found": true
+  },
+  {
+    "name": "leave year",
+    "role": "employee",
+    "user": null,
+    "question": "When does SwiftPay's leave year start and end?",
+    "expect_phrases": ["1 April", "31 March"],
+    "expect_doc": "POL-HR-010",
+    "expect_section": "4.1",
+    "expect_found": true
+  },
+  {
+    "name": "leave approval",
+    "role": "employee",
+    "user": null,
+    "question": "How many working days does a manager have to approve leave?",
+    "expect_phrases": ["2 working days"],
+    "expect_doc": "POL-HR-010",
+    "expect_section": "4.2",
+    "expect_found": true
+  },
+  {
+    "name": "work from home",
+    "role": "employee",
+    "user": null,
+    "question": "How many days per week can employees work from home?",
+    "expect_phrases": ["2 days"],
+    "expect_doc": "POL-HR-010",
+    "expect_section": "4.3",
+    "expect_found": true
+  },
+  {
+    "name": "public holidays",
+    "role": "employee",
+    "user": null,
+    "question": "How many public holidays does SwiftPay observe each year?",
+    "expect_phrases": ["12"],
+    "expect_doc": "POL-HR-010",
+    "expect_section": "4.4",
+    "expect_found": true
+  },
+  {
+    "name": "flight booking",
+    "role": "employee",
+    "user": null,
+    "question": "How many days in advance should business flights be booked where possible?",
+    "expect_phrases": ["7 days"],
+    "expect_doc": "POL-HR-010",
+    "expect_section": "5.1",
+    "expect_found": true
+  },
+  {
+    "name": "expense deadline",
+    "role": "employee",
+    "user": null,
+    "question": "Within how many days after a trip must an expense claim be submitted?",
+    "expect_phrases": ["30 days"],
+    "expect_doc": "POL-HR-010",
+    "expect_section": "6.1",
+    "expect_found": true
+  },
+  {
+    "name": "personal car reimbursement",
+    "role": "employee",
+    "user": null,
+    "question": "What is the reimbursement rate for using a personal car on business travel?",
+    "expect_phrases": ["12"],
+    "expect_doc": "POL-HR-010",
+    "expect_section": "5.4",
+    "expect_found": true
+  },
+  {
+    "name": "P2 acknowledgement",
+    "role": "employee",
+    "user": null,
+    "question": "How quickly must a P2 incident be acknowledged?",
+    "expect_phrases": ["15 minutes"],
+    "expect_doc": "SOP-OPS-001",
+    "expect_section": "5.",
+    "expect_found": true
+  },
+  {
+    "name": "P1 status updates",
+    "role": "employee",
+    "user": null,
+    "question": "How frequently must status updates be provided for a P1 incident?",
+    "expect_phrases": ["15 minutes"],
+    "expect_doc": "SOP-OPS-001",
+    "expect_section": "6.5",
+    "expect_found": true
+  },
+  {
+    "name": "P2 resolution target",
+    "role": "employee",
+    "user": null,
+    "question": "What is the target resolution time for a P2 incident?",
+    "expect_phrases": ["4 hours"],
+    "expect_doc": "SOP-OPS-001",
+    "expect_section": "5.",
+    "expect_found": true
+  },
+  {
+    "name": "initial severity",
+    "role": "employee",
+    "user": null,
+    "question": "Within how many minutes of acknowledging an alert must the initial incident severity be set?",
+    "expect_phrases": ["10 minutes"],
+    "expect_doc": "SOP-OPS-001",
+    "expect_section": "5.",
+    "expect_found": true
+  },
+  {
+    "name": "P1 escalation CTO",
+    "role": "employee",
+    "user": null,
+    "question": "At what point is the CTO escalated for an unresolved P1 incident?",
+    "expect_phrases": ["60 minutes"],
+    "expect_doc": "SOP-OPS-001",
+    "expect_section": "6.3",
+    "expect_found": true
+  },
+  {
+    "name": "incident recovery verification",
+    "role": "employee",
+    "user": null,
+    "question": "For how long must a service remain healthy before an incident can be declared resolved?",
+    "expect_phrases": ["15 minutes"],
+    "expect_doc": "SOP-OPS-001",
+    "expect_section": "6.6",
+    "expect_found": true
+  },
+  {
+    "name": "postmortem deadline",
+    "role": "employee",
+    "user": null,
+    "question": "Within how many business days must an incident postmortem be published?",
+    "expect_phrases": ["5 business days"],
+    "expect_doc": "SOP-OPS-001",
+    "expect_section": "6.7",
+    "expect_found": true
+  },
+  {
+    "name": "incident record retention",
+    "role": "employee",
+    "user": null,
+    "question": "How long are incident tickets, timelines and postmortems retained?",
+    "expect_phrases": ["3 years"],
+    "expect_doc": "SOP-OPS-001",
+    "expect_section": "8.",
+    "expect_found": true
+  }
+]

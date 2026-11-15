@@ -1,0 +1,204 @@
+{
+  "rows": [
+    [
+      "plain lookup",
+      true,
+      true,
+      true,
+      6374.983458023053,
+      "exact"
+    ],
+    [
+      "table value",
+      true,
+      true,
+      true,
+      2.391874964814633,
+      "exact"
+    ],
+    [
+      "spreadsheet row",
+      true,
+      true,
+      true,
+      1.8998340237885714,
+      "exact"
+    ],
+    [
+      "steps",
+      true,
+      true,
+      true,
+      1.896665955428034,
+      "exact"
+    ],
+    [
+      "agreed handling",
+      true,
+      true,
+      true,
+      1.9661670085042715,
+      "exact"
+    ],
+    [
+      "web page",
+      true,
+      true,
+      true,
+      2.7145830099470913,
+      "exact"
+    ],
+    [
+      "not found",
+      true,
+      true,
+      true,
+      1610.0757920066826,
+      "miss"
+    ],
+    [
+      "not found + distractor",
+      true,
+      true,
+      true,
+      993.0913329590112,
+      "miss"
+    ],
+    [
+      "permission: employee",
+      true,
+      true,
+      true,
+      1393.1547079700977,
+      "miss"
+    ],
+    [
+      "permission: sre",
+      true,
+      true,
+      true,
+      7527.34191698255,
+      "exact"
+    ],
+    [
+      "leave year",
+      true,
+      true,
+      true,
+      2.570666023530066,
+      "exact"
+    ],
+    [
+      "leave approval",
+      true,
+      true,
+      true,
+      2.0713750272989273,
+      "exact"
+    ],
+    [
+      "work from home",
+      true,
+      true,
+      true,
+      2.08229199051857,
+      "exact"
+    ],
+    [
+      "public holidays",
+      true,
+      true,
+      true,
+      2.231749997008592,
+      "exact"
+    ],
+    [
+      "flight booking",
+      true,
+      true,
+      true,
+      2.164500008802861,
+      "exact"
+    ],
+    [
+      "expense deadline",
+      true,
+      true,
+      true,
+      3.075124986935407,
+      "exact"
+    ],
+    [
+      "personal car reimbursement",
+      true,
+      true,
+      true,
+      2.4487500195391476,
+      "exact"
+    ],
+    [
+      "P2 acknowledgement",
+      true,
+      true,
+      true,
+      1.8060830188915133,
+      "exact"
+    ],
+    [
+      "P1 status updates",
+      true,
+      true,
+      true,
+      1.9659590325318277,
+      "exact"
+    ],
+    [
+      "P2 resolution target",
+      true,
+      true,
+      true,
+      2.2859160089865327,
+      "exact"
+    ],
+    [
+      "initial severity",
+      true,
+      true,
+      true,
+      1.862958015408367,
+      "exact"
+    ],
+    [
+      "P1 escalation CTO",
+      true,
+      true,
+      true,
+      2.101958030834794,
+      "exact"
+    ],
+    [
+      "incident recovery verification",
+      true,
+      true,
+      true,
+      1.9057499594055116,
+      "exact"
+    ],
+    [
+      "postmortem deadline",
+      true,
+      true,
+      true,
+      2.4350000312551856,
+      "exact"
+    ],
+    [
+      "incident record retention",
+      true,
+      true,
+      true,
+      1.9996659830212593,
+      "exact"
+    ]
+  ]
+}

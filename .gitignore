@@ -1,0 +1,47 @@
+# Secrets and environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local databases and vector storage
+qdrant_storage/
+*.db
+*.sqlite
+*.sqlite3
+
+# Source documents and generated files
+data/documents/
+data/work/
+data/managers.json
+
+# Local model files
+models/
+*.safetensors
+*.pt
+*.pth
+
+# Operating system and editor
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+# Local authentication database
+data/auth/
+
+# Generated evaluation reports
+data/answer_quality_report.json
+data/latency_report.json
+data/reranking_comparison.json

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SwiftPay Knowledge Assistant</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234f46e5'/%3E%3Cpath d='M9 17l5 5 9-12' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <!-- Login screen -->
+    <section id="loginScreen" class="login-screen" hidden>
+      <div class="card login-card">
+        <h2>SwiftPay Knowledge Assistant</h2>
+        <p>Sign in to access your documents.</p>
+
+        <form id="loginForm">
+          <label class="field">
+            <span>Username</span>
+            <input
+              id="loginUsername"
+              type="text"
+              autocomplete="username"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span>Password</span>
+            <input
+              id="loginPassword"
+              type="password"
+              autocomplete="current-password"
+              required
+            />
+          </label>
+
+          <p id="loginError" role="alert" hidden></p>
+
+          <button class="btn" type="submit">Sign in</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Main application -->
+    <div class="app" id="mainApp" hidden>
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M5 12.5l4.5 4.5L19 7" />
+            </svg>
+          </div>
+          <div>
+            <h1>SwiftPay Knowledge Assistant</h1>
+            <p>Answers from your documents, with sources</p>
+          </div>
+        </div>
+        <div class="status" id="status" aria-live="polite"></div>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Show panel">
+          <svg
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </header>
+
+      <div class="layout">
+        <aside class="side" id="side">
+          <section class="card">
+            <h2>Signed in as</h2>
+
+            <p id="currentUsername"></p>
+            <p id="currentRole"></p>
+
+            <p class="hint" id="roleHint"></p>
+
+            <button class="btn ghost" id="logoutBtn" type="button">
+              Sign out
+            </button>
+          </section>
+
+          <section class="card">
+            <div class="card-head">
+              <h2>Documents</h2>
+              <button class="link-btn" id="refreshDocs" title="Refresh">
+                Refresh
+              </button>
+            </div>
+            <ul class="docs" id="docs"></ul>
+            <div class="admin" id="admin" hidden>
+              <div
+                class="drop"
+                id="drop"
+                tabindex="0"
+                role="button"
+                aria-label="Upload a document"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M12 16V4M7 9l5-5 5 5M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3"
+                  />
+                </svg>
+                <strong>Drop a file or click to upload</strong>
+                <span>PDF, DOCX, XLSX, XLS, HTML, TXT, MD</span>
+                <input
+                  type="file"
+                  id="file"
+                  hidden
+                  accept=".pdf,.docx,.xlsx,.xls,.html,.htm,.txt,.md"
+                  multiple
+                />
+              </div>
+              <label class="field inline">
+                <span>Label for new files</span>
+                <select id="classification">
+                  <option value="internal">Internal</option>
+                  <option value="confidential">Confidential</option>
+                  <option value="restricted">Restricted</option>
+                </select>
+              </label>
+              <button class="btn ghost" id="loadFolder">
+                Load documents folder
+              </button>
+            </div>
+            <div class="jobs" id="jobs" aria-live="polite"></div>
+          </section>
+        </aside>
+
+        <main class="chat">
+          <div class="stream" id="stream" aria-live="polite">
+            <div class="empty" id="empty">
+              <div class="hero-mark" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="30"
+                  height="30"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 15a2 2 0 01-2 2H8l-5 4V6a2 2 0 012-2h14a2 2 0 012 2z"
+                  />
+                </svg>
+              </div>
+              <h2>Ask about SwiftPay's documents</h2>
+              <p>
+                Every answer shows its document, section and page. If the
+                documents do not contain the answer, you get "Not found".
+              </p>
+              <div class="chips" id="samples"></div>
+            </div>
+          </div>
+          <form class="composer" id="form">
+            <textarea
+              id="q"
+              rows="1"
+              maxlength="1000"
+              placeholder="Ask a question about the documents"
+              aria-label="Your question"
+            ></textarea>
+            <button class="send" id="send" type="submit" aria-label="Send">
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </button>
+          </form>
+          <p class="foot">
+            Answers are generated from retrieved passages. Check the sources for
+            anything important.
+          </p>
+        </main>
+      </div>
+    </div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

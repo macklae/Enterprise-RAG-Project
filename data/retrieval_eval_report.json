@@ -1,0 +1,466 @@
+{
+  "summary": {
+    "evaluated": 22,
+    "precision_at_5": 0.26363636363636367,
+    "recall_at_5": 0.9270396270396271,
+    "mrr": 0.8340909090909091,
+    "label_type": "document-section proxy",
+    "limitations": [
+      "Relevant IDs are inferred from document and section metadata.",
+      "Relevance labels have not been manually verified.",
+      "Role accessibility of all labelled chunks has not yet been audited.",
+      "Queries bypass Redis and the LLM.",
+      "Reranking is not included in this measurement."
+    ]
+  },
+  "cases": [
+    {
+      "name": "plain lookup",
+      "role": "employee",
+      "question": "How soon must a P1 incident be acknowledged?",
+      "relevant_chunk_ids": [
+        "edff1044-01ce-564d-ad86-594b192be9e5"
+      ],
+      "retrieved_chunk_ids": [
+        "2d33f389-7efc-5cf0-b042-28c4cd351630",
+        "7c1f97da-03fb-5ed7-a5de-16441a918fc2",
+        "40ab1ce6-a986-5ed3-aa3f-63f8aa69fee2",
+        "baac1d55-e1b8-51a6-9198-a4c202ce0f58",
+        "edff1044-01ce-564d-ad86-594b192be9e5"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 0.2
+    },
+    {
+      "name": "table value",
+      "role": "employee",
+      "question": "What is the hotel limit per night in Mumbai?",
+      "relevant_chunk_ids": [
+        "23381289-4855-5c89-bbfb-d4b8926216c5"
+      ],
+      "retrieved_chunk_ids": [
+        "23381289-4855-5c89-bbfb-d4b8926216c5",
+        "e586bfff-91b0-5c06-8232-be234139f74b",
+        "c6dc1de5-87c7-56d1-aea7-6ef659e7ca64",
+        "f57cdfdf-9688-5939-b6b8-279122f2a450",
+        "d895de03-2469-5fac-acac-bbb3933968a7"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "spreadsheet row",
+      "role": "employee",
+      "question": "Which team owns payments-service?",
+      "relevant_chunk_ids": [
+        "0d06a1e7-3226-5586-8f48-14c7f41bb026",
+        "3c9bf5d4-be5d-5538-8ee3-3abc371eefbb",
+        "4c9fb933-28bf-59a5-bdfd-36868afcd926",
+        "568e21c4-b51c-591c-b28c-2d9d711d3c36",
+        "66e1aef9-1b5a-5a79-8b3a-9259230b6a2a",
+        "6f9ae5ad-5533-51f8-baf8-70f41d192d8c",
+        "7669811f-a8d5-57ee-aa60-031a18d28926",
+        "7b874815-65dd-5fcf-a0c9-5a086a7fcb25",
+        "9e912f4f-20c7-56b2-ba03-7b26cd475984",
+        "df4c0909-1245-5850-80f5-70c16276374e",
+        "ec327427-9afd-5e6b-b130-7449db427ce0",
+        "edc6d52d-9719-5a3d-8905-3a3cc9d22bef",
+        "f1a112fa-b798-58e1-8a64-82ec512124b2",
+        "f5432bdc-994e-55bf-bf63-e8be7bd6d3d3",
+        "fc51809a-73b2-55dc-80bb-a2ebceab2644"
+      ],
+      "retrieved_chunk_ids": [
+        "f1a112fa-b798-58e1-8a64-82ec512124b2",
+        "7669811f-a8d5-57ee-aa60-031a18d28926",
+        "bc821682-0f1a-5fd9-95c2-f02e70f1ce02",
+        "9e912f4f-20c7-56b2-ba03-7b26cd475984",
+        "3c9bf5d4-be5d-5538-8ee3-3abc371eefbb"
+      ],
+      "precision_at_5": 0.8,
+      "recall_at_5": 0.26666666666666666,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "steps",
+      "role": "employee",
+      "question": "What are the steps to restore a database?",
+      "relevant_chunk_ids": [
+        "95fa4bb0-89db-5451-a1e0-17c3c7226f44"
+      ],
+      "retrieved_chunk_ids": [
+        "95fa4bb0-89db-5451-a1e0-17c3c7226f44",
+        "e001f5f7-fea3-5d5c-8b26-f731c9c3e0f3",
+        "138ee73d-3dbe-5eac-b716-2067b6e82a4a",
+        "6d50cdcd-a7aa-55f2-982c-3d234419d6bf",
+        "650a44b6-c9c1-5475-8e64-e30bcbfbdd11"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "agreed handling",
+      "role": "employee",
+      "question": "What are the RPO and RTO of the Payments database?",
+      "relevant_chunk_ids": [
+        "e38caeab-bbf1-59fb-ae95-72ae3797b2b1"
+      ],
+      "retrieved_chunk_ids": [
+        "138ee73d-3dbe-5eac-b716-2067b6e82a4a",
+        "e38caeab-bbf1-59fb-ae95-72ae3797b2b1",
+        "d895de03-2469-5fac-acac-bbb3933968a7",
+        "95fa4bb0-89db-5451-a1e0-17c3c7226f44",
+        "d40495e4-e1d3-5377-8be7-0e9a22fa47e6"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 0.5
+    },
+    {
+      "name": "web page",
+      "role": "employee",
+      "question": "What is TimesFM-3?",
+      "relevant_chunk_ids": [
+        "07cb56d6-a548-5a9c-a433-20a0afcff7fc",
+        "0cd98896-7b2a-58b0-99d7-eaa5b251e09c",
+        "1f7c5ee4-a466-5d6b-9ee1-e534864b0e6d",
+        "236fc1cf-c476-5c24-9f39-45947580c024",
+        "2592c785-02db-5b8b-b651-da1140aa31e8",
+        "28e29524-7490-57e1-a45c-00fe3811da1e",
+        "300e7c99-e324-5088-a5e9-c326d646ab74",
+        "3e3b06ed-2dfd-5a79-8369-44ed3109c352",
+        "3e59a3ff-2c15-5c93-9e59-e99a7c92289b",
+        "4307402c-0013-5dc0-a2ba-0ef16fef6bd9",
+        "45e39256-8ca3-5897-802f-b783b90622d1",
+        "4709205f-179a-51d1-8773-0f3fb95b3f95",
+        "5c114dd0-e827-5e5d-b6a1-e9971c1419e3",
+        "6ebeed03-7353-51ef-b5e6-3b4153f9cff7",
+        "6ecd6382-35ff-5b7c-8492-2e4fc10d015b",
+        "716912e5-e6ea-5417-a21e-c0e3c60c8127",
+        "7585c282-504d-51ae-b81d-46a69178e00e",
+        "785d1822-e4fc-508c-9f06-538975fffe96",
+        "841f38f2-81cb-5f83-806f-aeef7fca34a2",
+        "87346634-8fd2-5c6d-a90c-5f3bbdf2f5ce",
+        "8fa39e77-5ee6-5f3a-a60b-37d74db2fc4a",
+        "9066ba38-bc89-5e36-b7f8-67ef4635e209",
+        "926cdb4d-c759-57b1-b75c-0c0c378db0bd",
+        "95e69112-a67f-552e-bcd7-713c25822f34",
+        "a53166d9-f860-5ce1-8cb4-c122e88c899a",
+        "af85dc4f-7968-56c3-b42a-58e18463773a",
+        "c365e388-c58a-58d4-a39c-56f98488f699",
+        "c7205039-59dc-50b4-9b0b-15f67fbd25c5",
+        "c770e92f-8fa2-5705-9e48-6d8965f10b0a",
+        "c9ac17d2-5802-576f-81ba-496b0ab25981",
+        "ca7c38a2-4d9a-59e6-af03-3bdeab0701e4",
+        "cd471f55-762b-58b1-9b9d-86a5418be47b",
+        "d559409a-11f7-5b3e-bef5-55c875cb72f2",
+        "e0dc7021-370e-5cd6-9027-c3a18988318c",
+        "e5c2a273-dadb-587e-8846-f9f9466fe300",
+        "e5ed4829-5a5e-5c66-9d74-8ca2747fb6eb",
+        "edaf0a4e-d2a8-5085-9ec0-b46406741160",
+        "fa7d7fbf-1003-5500-b2dd-c529e3e465e2",
+        "facc6fe2-672b-52a2-bf8e-fb3c3565d075"
+      ],
+      "retrieved_chunk_ids": [
+        "af85dc4f-7968-56c3-b42a-58e18463773a",
+        "716912e5-e6ea-5417-a21e-c0e3c60c8127",
+        "c770e92f-8fa2-5705-9e48-6d8965f10b0a",
+        "236fc1cf-c476-5c24-9f39-45947580c024",
+        "c9ac17d2-5802-576f-81ba-496b0ab25981"
+      ],
+      "precision_at_5": 1.0,
+      "recall_at_5": 0.1282051282051282,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "permission: sre",
+      "role": "sre_ops",
+      "question": "Who is on call in October?",
+      "relevant_chunk_ids": [
+        "2eb86216-4de4-52b4-97b6-85478dad7ec6"
+      ],
+      "retrieved_chunk_ids": [
+        "2eb86216-4de4-52b4-97b6-85478dad7ec6",
+        "44340e1a-cc86-53f1-99fe-b749133558c8",
+        "57f3275a-f013-543f-91bf-ce855b459883",
+        "f0da9adb-9c31-5b1f-801a-ee83f046da29",
+        "0326a5f9-8085-5f89-a6e9-3900e9f8a1b8"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "leave year",
+      "role": "employee",
+      "question": "When does SwiftPay's leave year start and end?",
+      "relevant_chunk_ids": [
+        "099b20ae-bd7f-5638-b3e3-192b33eee11d"
+      ],
+      "retrieved_chunk_ids": [
+        "90ae1aa6-d9be-5864-9c2c-2ef72b917389",
+        "83b9c633-1216-52c9-b38f-e6057124db9a",
+        "12ff6f8c-2fa5-5218-9f22-a01c711414aa",
+        "099b20ae-bd7f-5638-b3e3-192b33eee11d",
+        "41aa297f-00ad-51c6-aec8-4b4dd6f9db7d"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 0.25
+    },
+    {
+      "name": "leave approval",
+      "role": "employee",
+      "question": "How many working days does a manager have to approve leave?",
+      "relevant_chunk_ids": [
+        "66414fa7-932f-56dc-b57d-ead470715725"
+      ],
+      "retrieved_chunk_ids": [
+        "66414fa7-932f-56dc-b57d-ead470715725",
+        "099b20ae-bd7f-5638-b3e3-192b33eee11d",
+        "a448628a-a1a0-516e-a5ac-3280814c7349",
+        "59a4b0c9-00a4-5528-ae6d-84f9ec97801c",
+        "e586bfff-91b0-5c06-8232-be234139f74b"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "work from home",
+      "role": "employee",
+      "question": "How many days per week can employees work from home?",
+      "relevant_chunk_ids": [
+        "a448628a-a1a0-516e-a5ac-3280814c7349"
+      ],
+      "retrieved_chunk_ids": [
+        "a448628a-a1a0-516e-a5ac-3280814c7349",
+        "099b20ae-bd7f-5638-b3e3-192b33eee11d",
+        "e586bfff-91b0-5c06-8232-be234139f74b",
+        "66414fa7-932f-56dc-b57d-ead470715725",
+        "5a92be62-67e4-5615-b9b3-6cb508d8c3fb"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "public holidays",
+      "role": "employee",
+      "question": "How many public holidays does SwiftPay observe each year?",
+      "relevant_chunk_ids": [
+        "90ae1aa6-d9be-5864-9c2c-2ef72b917389"
+      ],
+      "retrieved_chunk_ids": [
+        "90ae1aa6-d9be-5864-9c2c-2ef72b917389",
+        "12ff6f8c-2fa5-5218-9f22-a01c711414aa",
+        "83b9c633-1216-52c9-b38f-e6057124db9a",
+        "41aa297f-00ad-51c6-aec8-4b4dd6f9db7d",
+        "e3fcc33b-daa3-5bbe-9eff-69a5955cfaf6"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "flight booking",
+      "role": "employee",
+      "question": "How many days in advance should business flights be booked where possible?",
+      "relevant_chunk_ids": [
+        "59a4b0c9-00a4-5528-ae6d-84f9ec97801c"
+      ],
+      "retrieved_chunk_ids": [
+        "59a4b0c9-00a4-5528-ae6d-84f9ec97801c",
+        "f57cdfdf-9688-5939-b6b8-279122f2a450",
+        "5a92be62-67e4-5615-b9b3-6cb508d8c3fb",
+        "099b20ae-bd7f-5638-b3e3-192b33eee11d",
+        "2d33f389-7efc-5cf0-b042-28c4cd351630"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "expense deadline",
+      "role": "employee",
+      "question": "Within how many days after a trip must an expense claim be submitted?",
+      "relevant_chunk_ids": [
+        "0634eb06-b5d9-5a6a-9113-62cdfb651ab7"
+      ],
+      "retrieved_chunk_ids": [
+        "0634eb06-b5d9-5a6a-9113-62cdfb651ab7",
+        "c819953d-b4de-5470-acef-18d427d7bb54",
+        "f57cdfdf-9688-5939-b6b8-279122f2a450",
+        "5a92be62-67e4-5615-b9b3-6cb508d8c3fb",
+        "099b20ae-bd7f-5638-b3e3-192b33eee11d"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "personal car reimbursement",
+      "role": "employee",
+      "question": "What is the reimbursement rate for using a personal car on business travel?",
+      "relevant_chunk_ids": [
+        "662f3047-7f08-5237-bd52-13c2b5c0d4d0"
+      ],
+      "retrieved_chunk_ids": [
+        "662f3047-7f08-5237-bd52-13c2b5c0d4d0",
+        "59a4b0c9-00a4-5528-ae6d-84f9ec97801c",
+        "c819953d-b4de-5470-acef-18d427d7bb54",
+        "f57cdfdf-9688-5939-b6b8-279122f2a450",
+        "5a92be62-67e4-5615-b9b3-6cb508d8c3fb"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "P2 acknowledgement",
+      "role": "employee",
+      "question": "How quickly must a P2 incident be acknowledged?",
+      "relevant_chunk_ids": [
+        "edff1044-01ce-564d-ad86-594b192be9e5"
+      ],
+      "retrieved_chunk_ids": [
+        "2d33f389-7efc-5cf0-b042-28c4cd351630",
+        "7c1f97da-03fb-5ed7-a5de-16441a918fc2",
+        "40ab1ce6-a986-5ed3-aa3f-63f8aa69fee2",
+        "baac1d55-e1b8-51a6-9198-a4c202ce0f58",
+        "edff1044-01ce-564d-ad86-594b192be9e5"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 0.2
+    },
+    {
+      "name": "P1 status updates",
+      "role": "employee",
+      "question": "How frequently must status updates be provided for a P1 incident?",
+      "relevant_chunk_ids": [
+        "f734b130-947a-5688-a695-b994ff6c26c5"
+      ],
+      "retrieved_chunk_ids": [
+        "f734b130-947a-5688-a695-b994ff6c26c5",
+        "7c1f97da-03fb-5ed7-a5de-16441a918fc2",
+        "2d33f389-7efc-5cf0-b042-28c4cd351630",
+        "f0da9adb-9c31-5b1f-801a-ee83f046da29",
+        "edff1044-01ce-564d-ad86-594b192be9e5"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "P2 resolution target",
+      "role": "employee",
+      "question": "What is the target resolution time for a P2 incident?",
+      "relevant_chunk_ids": [
+        "edff1044-01ce-564d-ad86-594b192be9e5"
+      ],
+      "retrieved_chunk_ids": [
+        "2d33f389-7efc-5cf0-b042-28c4cd351630",
+        "7c1f97da-03fb-5ed7-a5de-16441a918fc2",
+        "d895de03-2469-5fac-acac-bbb3933968a7",
+        "40ab1ce6-a986-5ed3-aa3f-63f8aa69fee2",
+        "edff1044-01ce-564d-ad86-594b192be9e5"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 0.2
+    },
+    {
+      "name": "initial severity",
+      "role": "employee",
+      "question": "Within how many minutes of acknowledging an alert must the initial incident severity be set?",
+      "relevant_chunk_ids": [
+        "edff1044-01ce-564d-ad86-594b192be9e5"
+      ],
+      "retrieved_chunk_ids": [
+        "edff1044-01ce-564d-ad86-594b192be9e5",
+        "baac1d55-e1b8-51a6-9198-a4c202ce0f58",
+        "a1eb6675-ee9a-5908-910f-545753fb77c1",
+        "7c1f97da-03fb-5ed7-a5de-16441a918fc2",
+        "f0da9adb-9c31-5b1f-801a-ee83f046da29"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "P1 escalation CTO",
+      "role": "employee",
+      "question": "At what point is the CTO escalated for an unresolved P1 incident?",
+      "relevant_chunk_ids": [
+        "7c1f97da-03fb-5ed7-a5de-16441a918fc2"
+      ],
+      "retrieved_chunk_ids": [
+        "7c1f97da-03fb-5ed7-a5de-16441a918fc2",
+        "650a44b6-c9c1-5475-8e64-e30bcbfbdd11",
+        "edff1044-01ce-564d-ad86-594b192be9e5",
+        "95fa4bb0-89db-5451-a1e0-17c3c7226f44",
+        "2d33f389-7efc-5cf0-b042-28c4cd351630"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "incident recovery verification",
+      "role": "employee",
+      "question": "For how long must a service remain healthy before an incident can be declared resolved?",
+      "relevant_chunk_ids": [
+        "1ecdf3af-4958-559a-b805-2d3dd958d886"
+      ],
+      "retrieved_chunk_ids": [
+        "1ecdf3af-4958-559a-b805-2d3dd958d886",
+        "40ab1ce6-a986-5ed3-aa3f-63f8aa69fee2",
+        "2d33f389-7efc-5cf0-b042-28c4cd351630",
+        "7c1f97da-03fb-5ed7-a5de-16441a918fc2",
+        "edff1044-01ce-564d-ad86-594b192be9e5"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "postmortem deadline",
+      "role": "employee",
+      "question": "Within how many business days must an incident postmortem be published?",
+      "relevant_chunk_ids": [
+        "2d33f389-7efc-5cf0-b042-28c4cd351630"
+      ],
+      "retrieved_chunk_ids": [
+        "2d33f389-7efc-5cf0-b042-28c4cd351630",
+        "66060b5f-fb66-55b3-9047-17c4da7e1711",
+        "40ab1ce6-a986-5ed3-aa3f-63f8aa69fee2",
+        "edff1044-01ce-564d-ad86-594b192be9e5",
+        "f0da9adb-9c31-5b1f-801a-ee83f046da29"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    },
+    {
+      "name": "incident record retention",
+      "role": "employee",
+      "question": "How long are incident tickets, timelines and postmortems retained?",
+      "relevant_chunk_ids": [
+        "66060b5f-fb66-55b3-9047-17c4da7e1711"
+      ],
+      "retrieved_chunk_ids": [
+        "66060b5f-fb66-55b3-9047-17c4da7e1711",
+        "2d33f389-7efc-5cf0-b042-28c4cd351630",
+        "40ab1ce6-a986-5ed3-aa3f-63f8aa69fee2",
+        "39952582-27c7-5ccd-b8ae-de901866c149",
+        "f0da9adb-9c31-5b1f-801a-ee83f046da29"
+      ],
+      "precision_at_5": 0.2,
+      "recall_at_5": 1.0,
+      "reciprocal_rank": 1.0
+    }
+  ]
+}
