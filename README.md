@@ -9,7 +9,7 @@
 **Vector Database:** Qdrant  
 **Caching:** Redis  
 **LLM:** OpenAI  
-**Status:** Locally implemented, tested and published to a private GitHub repository. Production deployment has not been established.
+**Status:** Locally implemented, tested and published to a public GitHub repository. The application has not yet been deployed to a production environment.
 
 ---
 
