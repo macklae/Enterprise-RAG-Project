@@ -72,6 +72,21 @@ The cache uses custom Redis code and works with plain Redis. **RedisVL is not us
 
 The authoritative list of Python packages and versions is in `requirements.txt`.
 
+### Stopping and Restarting the Application
+
+When finished working:
+
+1. Stop FastAPI using `Ctrl + C` in its terminal.
+2. Stop Redis and Qdrant:
+
+   ```bash
+   docker compose down
+
+To resume working:
+
+docker compose up -d
+uvicorn app.api:app --port 8000
+
 ---
 
 # System Architecture
